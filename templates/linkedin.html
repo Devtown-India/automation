@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/bc5b9a65b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+			<section>
+		<h2>Want to send linkedln invitations?</h2>
+		<form method="POST" action="../send">
+			<label>Enter the keyword to search people</label>
+			<input type="text" name="keyword"><br>
+			<input type="number" name="number" placeholder="Enter no of connections">
+			<label>Check the box if you want to add a note</label>
+			 <!--<input type="checkbox" name="" id="cb"> -->
+			<input type="text" name="" placeholder="add your note here" id="note" >
+			<input class="btn btn-success" type="submit" name="" value="send" style="margin:0px; ">
+			{% csrf_token %}
+		</form>
+	</section>
+	<br><br>
+	<section>
+		<h2>Want to Withdraw older invitations?</h2>
+		<h5>This will withdraw one week or older invitations</h5>
+		<form method="GET" action="../withdraw">
+			<input class="btn btn-success" type="submit" name="" value="withdraw" style="margin:0px; ">
+		</form>
+	</section>
+	<section>
+		<h2>Want to send Greeting message to your new connections</h2>
+		<h5>This will send message to whom you are conneted within 24 hours.</h5>
+		<form method="GET" action="../send_greetings">
+			<input class="btn btn-success" type="submit" name="" value="Send Greetings" style="margin:0px; ">
+		</form>
+	</section>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+    $(document).ready(function(){
+		$('#note').hide()
+        $('input[type="checkbox"]').click(function(){
+            if($(this).is(":checked")){
+                $("#note").show()
+            }
+            else if($(this).is(":not(:checked)")){
+                $("#note").hide()
+            }
+        });
+    });
+</script>
+	
+</body>
+</html>

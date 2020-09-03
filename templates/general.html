@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/bc5b9a65b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<br><br>
+		<h4>Don't close the chome window opened!</h4>
+		<br><br>
+		<h1>Just Click the Login button to sign into your Linkedin Profile</h1>
+		<br>
+		<form method="GET" action="../login" style="text-align:center;">
+		<input class="btn btn-success" type="submit" name="" value="login" style="margin:0px; ">
+		{% csrf_token %}
+        </form>
+</body>
+</html>
